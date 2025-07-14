@@ -1,1 +1,3 @@
-# Easy-Texture-Generator
+# SpriteRecolor
+
+Needs [Sharp.js](https://sharp.pixelplumbing.com/)
