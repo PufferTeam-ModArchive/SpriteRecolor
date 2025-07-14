@@ -19,6 +19,9 @@ const types = [
   "saw",
   "chisel",
   "chisel_head",
+  "liquid",
+  "liquid_flowing",
+  "bucket",
   "layer_1",
   "layer_2"
 ]
@@ -59,7 +62,7 @@ async function resizeImage(name, r, g, b, brightness, saturation, lightness, typ
     console.error('Error coloring image:', error);
   }
 
-  if (type == "pickaxe" || type == "axe" || type == "sword" || type == "shovel" || type == "hoe" || type == "saw" || type == "chisel") {
+  if (type == "pickaxe" || type == "axe" || type == "sword" || type == "shovel" || type == "hoe" || type == "saw" || type == "chisel" || type == "bucket") {
     let overlay = 'metal-overlay/' + type + '.png'
     try {
       await sharp(fileDir) // Load the input image
