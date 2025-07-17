@@ -33,7 +33,7 @@ metal('osmium', 168, 181, 204, 1.2, 1, 1);
 metal('manasteel', 51, 137, 255, 1, 1, 1);
 metal('terrasteel', 61, 190, 0, 1, 1, 1);
 metal('elementium', 237, 51, 154, 1, 1, 1);
-metal('bronze', 143, 76, 38, 1, 1, 1);
+metal('bronze', 190, 119, 48, 1, 1, 1);
 metal('iron', 216, 216, 216, 1.1, 1, 0.8);
 metal('steel', 102, 102, 102, 0.8, 1, 0.5);
 metal('gold', 255, 227, 11, 1.2, 1, 1);
