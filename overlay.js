@@ -23,6 +23,7 @@ const types2 = [
   "crateex-ctm",
   "crate-fancy-ctm",
   "fancy-ctm",
+  "large-ctm",
   "panel-nails-ctm",
   "parquet-ctm"
 ]

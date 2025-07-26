@@ -83,6 +83,9 @@ plank('mahogany', 186, 122, 118, 1.5, 0, 1);
 plank('willow', 131, 145, 108, 1.5, 0, 1);
 plank('hellbark', 69, 48, 50, 0.5, 0, 1);
 plank('bamboo', 186, 205, 113, 1.8, 0, 1);
+plank('rowan', 213, 185, 94, 1.3, 0, 10);
+plank('hawthorn', 177, 172, 169, 1.5, 0, 20);
+plank('alder', 177, 95, 87, 0.9, 0, 15);
 
 plank('greatwood', 46, 17, 7, 0.35, 0, 1);
 plank('silverwood', 180, 169, 144, 1.8, 0, 20);

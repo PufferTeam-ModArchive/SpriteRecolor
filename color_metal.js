@@ -8,26 +8,38 @@ const types = [
   "plate",
   "ingot2",
   "pickaxe",
+  "pickaxe_head",
+  "scythe",
+  "scythe_head",
   "axe",
+  "axe_head",
   "helmet",
   "chestplate",
   "leggings",
   "boots",
   "shovel",
+  "shovel_head",
   "sword",
+  "sword_blade",
   "hoe",
+  "hoe_head",
   "saw",
+  "saw_blade",
   "chisel",
   "chisel_head",
   "liquid",
   "liquid_flowing",
   "bucket",
+  "cluster",
   "layer_1",
   "layer_2"
 ]
 
 const metals = new Map();
 
+metal('bauxite', 190, 110, 76, 1.2, 1, 2);
+metal('platinum', 200, 251, 255, 1.6, 1, 1);
+metal('nickel', 216, 204, 147, 1.2, 1, 1);
 metal('thaumium', 88, 74, 137, 0.6, 1, 0.5);
 metal('osmium', 168, 181, 204, 1.2, 1, 1);
 metal('manasteel', 51, 137, 255, 1, 1, 1);
@@ -39,6 +51,7 @@ metal('steel', 102, 102, 102, 0.8, 1, 0.5);
 metal('gold', 255, 227, 11, 1.2, 1, 1);
 metal('diamond', 74, 237, 209, 1.2, 1, 1);
 metal('flint', 51, 51, 51, 0.4, 1, 0.1);
+metal('constantan', 202, 144, 78, 1, 1, 1);
 
 function metal(name, r, g, b, brightness, saturation, lightness) {
   metals.set(name, { r: r, g: g, b: b, brightness: brightness, saturation: saturation, lightness: lightness });
@@ -62,7 +75,7 @@ async function resizeImage(name, r, g, b, brightness, saturation, lightness, typ
     console.error('Error coloring image:', error);
   }
 
-  if (type == "pickaxe" || type == "axe" || type == "sword" || type == "shovel" || type == "hoe" || type == "saw" || type == "chisel" || type == "bucket") {
+  if (type == "pickaxe" || type == "axe" || type == "sword" || type == "shovel" || type == "hoe" || type == "saw" || type == "chisel" || type == "bucket" || type == "scythe") {
     let overlay = 'metal-overlay/' + type + '.png'
     try {
       await sharp(fileDir) // Load the input image

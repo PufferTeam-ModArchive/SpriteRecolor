@@ -1,1 +1,3 @@
 node color.js
+
+pause
