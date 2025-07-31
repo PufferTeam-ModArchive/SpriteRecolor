@@ -1,6 +1,14 @@
 const sharp = require('sharp');
 const fs = require('fs');
 
+function capitalize(str) {
+    let e = str.split("");
+    e[0] = e[0].toUpperCase()
+    let r = e.join("")
+
+    return r
+}
+
 const types = [
   "default",
   "blinds",
@@ -50,6 +58,11 @@ const typesmisc2 = [
   "desk_bop",
   "table_bop",
   "base"
+]
+
+const typesmisc20 = [
+  "ModelSieve",
+  "ModelBarrel0"
 ]
 
 const typesmisc3 = [
@@ -107,6 +120,9 @@ async function resizeImage(name, r, g, b, brightness, saturation, lightness, typ
   if (isChisel == 3) {
     fileDir = 'planks-example-misc-output/drawers_' + name + '_' + type + '.png';
   }
+  if (isChisel == 4) {
+    fileDir = 'planks-example-misc-output/' + type + capitalize(name) + '.png';
+  }
   try {
     await sharp(fileInput) // Load the input image
       .tint({ r: r, g: g, b: b }) // Tint
@@ -148,6 +164,17 @@ async function addOverlay(name, type) {
       console.error('Error coloring image:', error);
     }
   }
+  if(type == "ModelBarrel0") {
+      fileDir = 'planks-example-misc-output/ModelBarrel' + capitalize(name) + '.png';
+    fileInput = 'planks-example-misc-output/' + type + capitalize(name) + '.png';
+    try {
+      await sharp(fileInput) // Load the input image
+        .composite([{ input: 'modelbarrel.png' }])
+        .toFile(fileDir);
+    } catch (error) {
+      console.error('Error coloring image:', error);
+    }
+  }
 
 }
 
@@ -162,10 +189,16 @@ planks.forEach((value, key) => {
   typesmisc2.forEach((type, i) => {
     resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 2);
   })
+  typesmisc20.forEach((type, i) => {
+    resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 4);
+  })
   typesmisc3.forEach((type, i) => {
     resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 3);
   })
   typesmisc2.forEach((type, i) => {
+    addOverlay(key, type);
+  })
+  typesmisc20.forEach((type, i) => {
     addOverlay(key, type);
   })
   types.forEach((type, i) => {
