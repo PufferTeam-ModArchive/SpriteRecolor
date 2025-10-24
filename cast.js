@@ -7,7 +7,8 @@ const types = [
 
 const metals = new Map();
 
-metal('clay', 142, 70, 49, 0.5, 1, 1);
+metal('clay', 176, 185, 213, 0.8, 1, 1);
+metal('ceramic', 142, 70, 49, 0.5, 1, 1);
 metal('steel', 152, 152, 152, 0.3, 1, 1);
 
 function metal(name, r, g, b, brightness, saturation, lightness) {

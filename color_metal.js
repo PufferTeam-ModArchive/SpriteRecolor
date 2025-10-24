@@ -59,6 +59,8 @@ metal('invar', 141, 152, 148, 0.8, 1, 3);
 metal('tin', 117, 151, 170, 0.8, 1, 3);
 metal('silver', 191, 219, 227, 1.0, 1, 3);
 metal('thaumium', 88, 74, 137, 0.5, 1, 3);
+metal('thaumium', 88, 74, 137, 0.5, 1, 3);
+
 metal('manasteel', 51, 137, 255, 0.9, 1, 1);
 metal('terrasteel', 61, 190, 0, 0.9, 1, 1);
 metal('elementium', 237, 51, 154, 0.9, 1, 1);
@@ -69,8 +71,12 @@ metal('steel', 102, 102, 102, 0.5, 1, 1.0);
 metal('gold', 255, 210, 20, 1.0, 2.5, 2.0);
 metal('diamond', 74, 237, 217, 1.0, 1, 1);
 metal('platinum', 141, 212, 240, 1.0, 1, 1);
+metal('manainfused', 145, 227, 255, 0.9, 1, 3);
 metal('nickel', 189, 170, 117, 0.9, 1.1, 0.8);
 metal('osmium', 168, 181, 204, 0.9, 1, 1);
+metal('signalum', 221, 63, 0, 0.7, 1, 1);
+metal('lumium', 220, 213, 108, 1.1, 1.5, 0.8);
+metal('enderium', 15, 112, 112, 0.5, 1.2, 0.8);
 
 function metal(name, r, g, b, brightness, saturation, lightness) {
   metals.set(name, { r: r, g: g, b: b, brightness: brightness, saturation: saturation, lightness: lightness });

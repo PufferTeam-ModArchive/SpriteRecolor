@@ -51,7 +51,10 @@ const typesmisc = [
   "door_bottom",
   "door",
   "trapdoor",
-  "lumber"
+  "lumber",
+  "shelf",
+  "chair",
+  "table",
 ]
 
 const typesmisc2 = [
@@ -63,6 +66,11 @@ const typesmisc2 = [
 const typesmisc20 = [
   "ModelSieve",
   "ModelBarrel0"
+]
+
+const typesmisc15 = [
+  "jar0",
+  "rack0",
 ]
 
 const typesmisc3 = [
@@ -77,6 +85,26 @@ const typesmisc3 = [
 ]
 
 const planks = new Map();
+
+/*
+plank('cherry', 121, 10, 21, 0.85, 0, 1);
+plank('dark', 71, 61, 76, 0.75, 0, 1);
+plank('fir', 150, 141, 116, 1.3, 0, 5);
+plank('ethereal', 76, 150, 115, 1.3, 0, 0.8);
+plank('magic', 99, 115, 177, 1.2, 0, 0.4);
+plank('mangrove', 245, 230, 191, 1.6, 0, 20);
+plank('palm', 183, 132, 69, 1.3, 0, 1);
+plank('redwood', 156, 79, 54, 1.0, 0, 1);
+plank('pine', 134, 107, 79, 1.5, 0, 1);
+plank('jacaranda', 191, 160, 147, 1.6, 0, 1);
+plank('mahogany', 179, 120, 117, 1.3, 0, 1);
+plank('willow', 131, 145, 108, 1.4, 0, 1);
+plank('hellbark', 195, 145, 85, 1.5, 0, 1);
+plank('bamboo', 186, 205, 113, 1.8, 0, 1);
+
+plank('greatwood', 46, 17, 7, 0.35, 0, 1);
+plank('silverwood', 180, 169, 144, 1.5, 0, 20);
+*/
 
 plank('oak', 188, 152, 98, 1.2, 0, 20);
 plank('sacredoak', 188, 152, 98, 1.2, 0, 20);
@@ -176,6 +204,30 @@ async function addOverlay(name, type) {
     }
   }
 
+  if(type == "jar0") {
+    fileDir = 'planks-example-misc-output/' + name + '_jar.png';
+    fileInput = 'planks-example-misc-output/' + name + '_' + type + '.png';
+    try {
+      await sharp(fileInput) // Load the input image
+        .composite([{ input: 'jar.png' }])
+        .toFile(fileDir);
+    } catch (error) {
+      console.error('Error coloring image:', error);
+    }
+  }
+
+  if(type == "rack0") {
+    fileDir = 'planks-example-misc-output/' + name + '_rack.png';
+    fileInput = 'planks-example-misc-output/' + name + '_' + type + '.png';
+    try {
+      await sharp(fileInput) // Load the input image
+        .composite([{ input: 'rack.png' }])
+        .toFile(fileDir);
+    } catch (error) {
+      console.error('Error coloring image:', error);
+    }
+  }
+
 }
 
 planks.forEach((value, key) => {
@@ -189,6 +241,9 @@ planks.forEach((value, key) => {
   typesmisc2.forEach((type, i) => {
     resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 2);
   })
+  typesmisc15.forEach((type, i) => {
+    resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 0);
+  })
   typesmisc20.forEach((type, i) => {
     resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 4);
   })
@@ -196,6 +251,9 @@ planks.forEach((value, key) => {
     resizeImage(key, map.r, map.g, map.b, map.brightness, map.saturation, map.lightness, type, 3);
   })
   typesmisc2.forEach((type, i) => {
+    addOverlay(key, type);
+  })
+  typesmisc15.forEach((type, i) => {
     addOverlay(key, type);
   })
   typesmisc20.forEach((type, i) => {
