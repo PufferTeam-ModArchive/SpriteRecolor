@@ -86,7 +86,9 @@ const typesmisc3 = [
 
 const planks = new Map();
 
-/*
+plank('oak', 188, 152, 98, 1.2, 0, 20);
+plank('acacia', 186, 99, 55, 0.8, 0, 20);
+plank('dark-oak', 110, 70, 2, 0.5, 0, 0)
 plank('cherry', 121, 10, 21, 0.85, 0, 1);
 plank('dark', 71, 61, 76, 0.75, 0, 1);
 plank('fir', 150, 141, 116, 1.3, 0, 5);
@@ -104,32 +106,6 @@ plank('bamboo', 186, 205, 113, 1.8, 0, 1);
 
 plank('greatwood', 46, 17, 7, 0.35, 0, 1);
 plank('silverwood', 180, 169, 144, 1.5, 0, 20);
-*/
-
-plank('oak', 188, 152, 98, 1.2, 0, 20);
-plank('sacredoak', 188, 152, 98, 1.2, 0, 20);
-plank('acacia', 186, 99, 55, 0.8, 0, 20);
-plank('dark-oak', 110, 70, 2, 0.5, 0, 0)
-plank('cherry', 121, 10, 21, 0.85, 0, 1);
-plank('dark', 92, 75, 109, 0.75, 0, 1);
-plank('fir', 150, 141, 116, 1.5, 0, 5);
-plank('ethereal', 76, 150, 115, 1.4, 0, 0.8);
-plank('magic', 99, 115, 177, 1.2, 0, 0.4);
-plank('mangrove', 245, 230, 191, 1.8, 0, 20);
-plank('palm', 183, 132, 69, 1.5, 0, 1);
-plank('redwood', 163, 74, 42, 1, 0, 1);
-plank('pine', 134, 107, 79, 1.5, 0, 1);
-plank('jacaranda', 191, 160, 147, 1.8, 0, 1);
-plank('mahogany', 186, 122, 118, 1.5, 0, 1);
-plank('willow', 131, 145, 108, 1.5, 0, 1);
-plank('hellbark', 69, 48, 50, 0.5, 0, 1);
-plank('bamboo', 186, 205, 113, 1.8, 0, 1);
-plank('rowan', 213, 185, 94, 1.3, 0, 10);
-plank('hawthorn', 177, 172, 169, 1.5, 0, 20);
-plank('alder', 177, 95, 87, 0.9, 0, 15);
-
-plank('greatwood', 46, 17, 7, 0.35, 0, 1);
-plank('silverwood', 180, 169, 144, 1.8, 0, 20);
 
 function plank(name, r, g, b, brightness, saturation, lightness) {
   planks.set(name, { r: r, g: g, b: b, brightness: brightness, saturation: saturation, lightness: lightness });

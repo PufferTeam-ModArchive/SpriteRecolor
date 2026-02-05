@@ -10,6 +10,7 @@ function capitalize(str) {
 }
 
 const types = [
+  "anvil",
   "block",
   "ingot",
   "nugget",
@@ -35,6 +36,8 @@ const types = [
   "saw_blade",
   "hoe",
   "hoe_head",
+  "hammer",
+  "hammer_head",
   "helmet",
   "chestplate",
   "leggings",
@@ -44,6 +47,22 @@ const types = [
   "bucket",
   "scythe",
   "scythe_head",
+  "propick",
+  "propick_head",
+  "knife",
+  "knife_blade",
+  "armor1",
+  "armor2",
+  "helmet1",
+  "chestplate1",
+  "leggings1",
+  "boots1",
+  "armor2_1",
+  "armor2_2",
+  "helmet2",
+  "chestplate2",
+  "leggings2",
+  "boots2",
   "liquid",
   "ore",
   "liquid_flow"
@@ -77,20 +96,22 @@ metal('osmium', 168, 181, 204, 0.9, 1, 1);
 metal('signalum', 221, 63, 0, 0.7, 1, 1);
 metal('lumium', 220, 213, 108, 1.1, 1.5, 0.8);
 metal('enderium', 15, 112, 112, 0.5, 1.2, 0.8);
+metal('uranium', 75, 134, 11, 0.7, 1.2, 0.8);
+metal('cast_iron', 99, 85, 70, 0.4, 1, 1);
 
 function metal(name, r, g, b, brightness, saturation, lightness) {
   metals.set(name, { r: r, g: g, b: b, brightness: brightness, saturation: saturation, lightness: lightness });
 }
 
 function needsOverlay(type) {
-  if (type == "pickaxe" || type == "axe" || type == "sword" || type == "shovel" || type == "hoe" || type == "saw" || type == "chisel" || type == "bucket" || type == "scythe" || type == "hammer" || type == "pickaxe1" || type == "axe1" || type == "sword1" || type == "shovel1" || type == "hoe1") {
+  if (type == "pickaxe" || type == "axe" || type == "sword" || type == "shovel" || type == "hoe" || type == "saw" || type == "chisel" || type == "bucket" || type == "scythe" || type == "hammer" || type == "pickaxe1" || type == "axe1" || type == "sword1" || type == "shovel1" || type == "hoe1" || type == "knife" || type == "propick" || type == "armor1" || type == "helmet1" || type == "chestplate1" || type == "helmet2" || type == "leggings2" || type == "armor2_1" || type == "armor2_2" || type == "hammer") {
     return true;
   }
   return false;
 }
 function isTool(type, name) {
-  if (type == "layer_1" || type == "layer_2" || type == "helmet" || type == "chestplate" || type == "leggings" || type == "boots" || type == "pickaxe" || type == "pickaxe_head" || type == "axe" || type == "axe_head" || type == "sword" || type == "sword_blade" || type == "shovel" || type == "shovel_head" || type == "hoe" || type == "hoe_head" || type == "saw" || type == "saw_blade" || type == "chisel" || type == "chisel_head" || type == "scythe" || type == "scythe_head" || type == "hammer" || type == "hammer_head" || type == "pickaxe1" || type == "pickaxe_head1" || type == "axe1" || type == "axe_head1" || type == "sword1" || type == "sword_blade1" || type == "shovel1" || type == "shovel_head1" || type == "hoe1" || type == "hoe_head1") {
-    if (name != "iron" && name != "gold" && name != "thaumium" && name != "manasteel" && name != "terrasteel" && name != "elementium" && name != "bronze" && name != "steel") {
+  if (type == "layer_1" || type == "layer_2" || type == "helmet" || type == "chestplate" || type == "leggings" || type == "boots" || type == "pickaxe" || type == "pickaxe_head" || type == "axe" || type == "axe_head" || type == "sword" || type == "sword_blade" || type == "shovel" || type == "shovel_head" || type == "hoe" || type == "hoe_head" || type == "saw" || type == "saw_blade" || type == "chisel" || type == "chisel_head" || type == "scythe" || type == "scythe_head" || type == "hammer" || type == "hammer_head" || type == "pickaxe1" || type == "pickaxe_head1" || type == "axe1" || type == "axe_head1" || type == "sword1" || type == "sword_blade1" || type == "shovel1" || type == "shovel_head1" || type == "hoe1" || type == "hoe_head1" || type == "propick" || type == "propick_head" || type == "knife" || type == "knife_blade" || type == "hammer" || type == "hammer_head") {
+    if (name != "iron" && name != "gold" && name != "thaumium" && name != "manasteel" && name != "terrasteel" && name != "elementium" && name != "bronze" && name != "steel" && name != "copper") {
       return false;
     } else {
       return true;
